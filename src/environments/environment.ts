@@ -38,42 +38,54 @@
 
 export const environment = {
   production: true,
-  urlRaiz: 'https://back.iatecdigital.com',
-  apiUrl: 'https://back.iatecdigital.com/api/test_api_crud',
-  apiUrl2: 'https://back.iatecdigital.com/api/test_api',
-  apiUrl3: 'https://back.iatecdigital.com/api/upload',
-  apiUpdateFile: 'https://back.iatecdigital.com/api/update/upload',
-  apiListarFiles: 'https://back.iatecdigital.com/api/listar/files',
-  apiDeleteFile: 'https://back.iatecdigital.com/api/update/upload',
-  apiUrlTrabajador: 'https://back.iatecdigital.com/api/trabajador',
-  apiUrlRegister: 'https://back.iatecdigital.com/api/register',
-  apiUrlLogin: 'https://back.iatecdigital.com/api/login',
-  apiUrlEmail: 'https://back.iatecdigital.com/api/enviar_correo',
-  apiUrlEmpleador: 'https://back.iatecdigital.com/api/empleador',
-  apiUrlUltimoEmpleador: 'https://back.iatecdigital.com/api/ultimo_empleador',
+  urlRaiz: 'https://apikalmaperu.enfocussoluciones.pe',
+  apiUrl: 'https://apikalmaperu.enfocussoluciones.pe/api/test_api_crud',
+  apiUrl2: 'https://apikalmaperu.enfocussoluciones.pe/api/test_api',
+  apiUrl3: 'https://apikalmaperu.enfocussoluciones.pe/api/upload',
+  apiUpdateFile: 'https://apikalmaperu.enfocussoluciones.pe/api/update/upload',
+  apiListarFiles: 'https://apikalmaperu.enfocussoluciones.pe/api/listar/files',
+  apiDeleteFile: 'https://apikalmaperu.enfocussoluciones.pe/api/update/upload',
+  apiUrlTrabajador: 'https://apikalmaperu.enfocussoluciones.pe/api/trabajador',
+  apiUrlRegister: 'https://apikalmaperu.enfocussoluciones.pe/api/register',
+  apiUrlLogin: 'https://apikalmaperu.enfocussoluciones.pe/api/login',
+  apiUrlEmail: 'https://apikalmaperu.enfocussoluciones.pe/api/enviar_correo',
+  apiUrlEmpleador: 'https://apikalmaperu.enfocussoluciones.pe/api/empleador',
+  apiUrlUltimoEmpleador:
+    'https://apikalmaperu.enfocussoluciones.pe/api/ultimo_empleador',
   apiUrlActividadUltimoEmpleador:
-    'https://back.iatecdigital.com/api/actividad_ultimo_empleador',
-  apiUrlMision: 'https://back.iatecdigital.com/api/mision',
-  apiUrlMisionActualizar: 'https://back.iatecdigital.com/api/mision/actualizar',
-  apiUrlMisionUpdate: 'https://back.iatecdigital.com/api/mision/update/upload',
-  apiUrl3Carousel: 'https://back.iatecdigital.com/api/carousel/upload',
+    'https://apikalmaperu.enfocussoluciones.pe/api/actividad_ultimo_empleador',
+  apiUrlMision: 'https://apikalmaperu.enfocussoluciones.pe/api/mision',
+  apiUrlMisionActualizar:
+    'https://apikalmaperu.enfocussoluciones.pe/api/mision/actualizar',
+  apiUrlMisionUpdate:
+    'https://apikalmaperu.enfocussoluciones.pe/api/mision/update/upload',
+  apiUrl3Carousel:
+    'https://apikalmaperu.enfocussoluciones.pe/api/carousel/upload',
   apiUpdateFileCarousel:
-    'https://back.iatecdigital.com/api/carousel/update/upload',
+    'https://apikalmaperu.enfocussoluciones.pe/api/carousel/update/upload',
   apiListarFilesCarousel:
-    'https://back.iatecdigital.com/api/carousel/listar/files',
+    'https://apikalmaperu.enfocussoluciones.pe/api/carousel/listar/files',
   apiDeleteFileCarousel:
-    'https://back.iatecdigital.com/api/carousel/update/upload',
-  apiUrl3Producto: 'https://back.iatecdigital.com/api/productos/subir',
-  apiUpdateFileProducto: 'https://back.iatecdigital.com/api/productos/update',
-  apiListarFilesProducto: 'https://back.iatecdigital.com/api/productos',
-  apiListarCursosProducto: 'https://back.iatecdigital.com/api/productos/cursos',
+    'https://apikalmaperu.enfocussoluciones.pe/api/carousel/update/upload',
+  apiUrl3Producto:
+    'https://apikalmaperu.enfocussoluciones.pe/api/productos/subir',
+  apiUpdateFileProducto:
+    'https://apikalmaperu.enfocussoluciones.pe/api/productos/update',
+  apiListarFilesProducto:
+    'https://apikalmaperu.enfocussoluciones.pe/api/productos',
+  apiListarCursosProducto:
+    'https://apikalmaperu.enfocussoluciones.pe/api/productos/cursos',
   apiListarEspecialidadesProducto:
-    'https://back.iatecdigital.com/api/productos/especialidades',
-  apiDeleteFileProducto: 'https://back.iatecdigital.com/api/productos',
-  apiListarContactos: 'https://back.iatecdigital.com/api/contactos',
-  apiUrl3Testimonio: 'https://back.iatecdigital.com/api/testimonios/subir',
+    'https://apikalmaperu.enfocussoluciones.pe/api/productos/especialidades',
+  apiDeleteFileProducto:
+    'https://apikalmaperu.enfocussoluciones.pe/api/productos',
+  apiListarContactos: 'https://apikalmaperu.enfocussoluciones.pe/api/contactos',
+  apiUrl3Testimonio:
+    'https://apikalmaperu.enfocussoluciones.pe/api/testimonios/subir',
   apiUpdateFileTestimonio:
-    'https://back.iatecdigital.com/api/testimonios/update',
-  apiListarFilesTestimonio: 'https://back.iatecdigital.com/api/testimonios',
-  apiDeleteFileTestimonio: 'https://back.iatecdigital.com/api/testimonios',
+    'https://apikalmaperu.enfocussoluciones.pe/api/testimonios/update',
+  apiListarFilesTestimonio:
+    'https://apikalmaperu.enfocussoluciones.pe/api/testimonios',
+  apiDeleteFileTestimonio:
+    'https://apikalmaperu.enfocussoluciones.pe/api/testimonios',
 };
