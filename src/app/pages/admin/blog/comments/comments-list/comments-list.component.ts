@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Comment } from 'src/app/models/comment.model';
 import { CommentService } from 'src/app/services/comment.service';
-import { Router } from '@angular/router'; // Importar Router para la navegación
+import { Router, RouterLink } from '@angular/router'; // Importar Router para la navegación
 
 @Component({
   selector: 'app-comments-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './comments-list.component.html',
   styleUrl: './comments-list.component.css',
 })
@@ -25,7 +25,7 @@ export class CommentsListComponent implements OnInit {
   // Función para redirigir a la página de edición
   editComment(id: number | undefined): void {
     if (id !== undefined) {
-      this.router.navigate([`/comments/edit/${id}`]); // Navegar a la ruta de edición con el id del comentario
+      this.router.navigate([`/admin/blog/comments/edit/${id}`]); // Navegar a la ruta de edición con el id del comentario
     }
   }
 

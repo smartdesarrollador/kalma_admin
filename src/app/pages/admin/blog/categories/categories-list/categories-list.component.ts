@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CategoryService } from 'src/app/services/category.service';
 import { Category } from 'src/app/models/category.model';
-import { Router } from '@angular/router'; // Importar Router para la navegación
+import { Router, RouterLink } from '@angular/router'; // Importar Router para la navegación
 
 @Component({
   selector: 'app-categories-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './categories-list.component.html',
   styleUrl: './categories-list.component.css',
 })

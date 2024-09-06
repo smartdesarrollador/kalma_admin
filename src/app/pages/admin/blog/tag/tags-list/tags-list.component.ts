@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Tag } from 'src/app/models/tag.model';
 import { TagService } from 'src/app/services/tag.service';
-import { Router } from '@angular/router'; // Importar Router para la navegación
+import { Router, RouterLink } from '@angular/router'; // Importar Router para la navegación
 
 @Component({
   selector: 'app-tags-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './tags-list.component.html',
   styleUrl: './tags-list.component.css',
 })

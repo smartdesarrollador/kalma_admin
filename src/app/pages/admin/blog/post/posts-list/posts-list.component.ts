@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PostService } from 'src/app/services/post.service';
 import { Post } from 'src/app/models/post.model';
-import { Router } from '@angular/router'; // Importar Router para la navegación
+import { Router, RouterLink } from '@angular/router'; // Importar Router para la navegación
 
 @Component({
   selector: 'app-posts-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './posts-list.component.html',
   styleUrl: './posts-list.component.css',
 })
