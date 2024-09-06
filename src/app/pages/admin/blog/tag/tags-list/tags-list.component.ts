@@ -24,7 +24,7 @@ export class TagsListComponent implements OnInit {
 
   // Función para redirigir a la página de edición
   editTag(id: number): void {
-    this.router.navigate([`/tags/edit/${id}`]); // Navegar a la ruta de edición con el id del tag
+    this.router.navigate([`/admin/blog/tags/edit/${id}`]); // Navegar a la ruta de edición con el id del tag
   }
 
   // Función para eliminar un tag

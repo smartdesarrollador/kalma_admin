@@ -49,6 +49,7 @@ import { CreateCategoryComponent } from './pages/admin/blog/categories/create-ca
 import { CreateTagComponent } from './pages/admin/blog/tag/create-tag/create-tag.component';
 import { CreateCommentComponent } from './pages/admin/blog/comments/create-comment/create-comment.component';
 import { EditCategoryComponent } from './pages/admin/blog/categories/edit-category/edit-category.component';
+import { EditTagComponent } from './pages/admin/blog/tag/edit-tag/edit-tag.component';
 
 export const routes: Routes = [
   {
@@ -207,6 +208,10 @@ export const routes: Routes = [
       {
         path: 'blog/tags/create',
         component: CreateTagComponent,
+      },
+      {
+        path: 'blog/tags/edit/:id',
+        component: EditTagComponent,
       },
       {
         path: 'blog/categories',
