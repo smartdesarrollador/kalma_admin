@@ -88,4 +88,10 @@ export const environment = {
     'https://apikalmaperu.enfocussoluciones.pe/api/testimonios',
   apiDeleteFileTestimonio:
     'https://apikalmaperu.enfocussoluciones.pe/api/testimonios',
+  /* blog */
+  postsUrl: 'https://apikalmaperu.enfocussoluciones.pe/api/posts',
+  usersUrl: 'https://apikalmaperu.enfocussoluciones.pe/api/users',
+  categoriesUrl: 'https://apikalmaperu.enfocussoluciones.pe/api/categories',
+  commentsUrl: 'https://apikalmaperu.enfocussoluciones.pe/api/comments',
+  tagsUrl: 'https://apikalmaperu.enfocussoluciones.pe/api/tags',
 };

@@ -39,6 +39,16 @@ import { ContactoComponent } from './pages/admin/contacto/contacto.component';
 import { TestimonioComponent } from './pages/admin/testimonio/testimonio.component';
 import { CreateTestimonioComponent } from './pages/admin/testimonio/create-testimonio/create-testimonio.component';
 import { EditTestimonioComponent } from './pages/admin/testimonio/edit-testimonio/edit-testimonio.component';
+import { PostsListComponent } from './pages/admin/blog/post/posts-list/posts-list.component';
+import { UsersListComponent } from './pages/admin/blog/user/users-list/users-list.component';
+import { CommentsListComponent } from './pages/admin/blog/comments/comments-list/comments-list.component';
+import { TagsListComponent } from './pages/admin/blog/tag/tags-list/tags-list.component';
+import { CategoriesListComponent } from './pages/admin/blog/categories/categories-list/categories-list.component';
+import { CreatePostComponent } from './pages/admin/blog/post/create-post/create-post.component';
+import { CreateCategoryComponent } from './pages/admin/blog/categories/create-category/create-category.component';
+import { CreateTagComponent } from './pages/admin/blog/tag/create-tag/create-tag.component';
+import { CreateCommentComponent } from './pages/admin/blog/comments/create-comment/create-comment.component';
+import { EditCategoryComponent } from './pages/admin/blog/categories/edit-category/edit-category.component';
 
 export const routes: Routes = [
   {
@@ -169,6 +179,46 @@ export const routes: Routes = [
         path: 'testimonios/edit',
         canActivate: [AuthGuard],
         component: EditTestimonioComponent,
+      },
+      {
+        path: 'blog/posts',
+        component: PostsListComponent,
+      },
+      {
+        path: 'blog/posts/create',
+        component: CreatePostComponent,
+      },
+      {
+        path: 'blog/users',
+        component: UsersListComponent,
+      },
+      {
+        path: 'blog/comments',
+        component: CommentsListComponent,
+      },
+      {
+        path: 'blog/comments/create',
+        component: CreateCommentComponent,
+      },
+      {
+        path: 'blog/tags',
+        component: TagsListComponent,
+      },
+      {
+        path: 'blog/tags/create',
+        component: CreateTagComponent,
+      },
+      {
+        path: 'blog/categories',
+        component: CategoriesListComponent,
+      },
+      {
+        path: 'blog/categories/create',
+        component: CreateCategoryComponent,
+      },
+      {
+        path: 'blog/categories/edit/:id',
+        component: EditCategoryComponent,
       },
     ],
   },

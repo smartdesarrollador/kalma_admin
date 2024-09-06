@@ -34,4 +34,10 @@ export const environment = {
   apiUpdateFileTestimonio: 'http://127.0.0.1:8000/api/testimonios/update',
   apiListarFilesTestimonio: 'http://127.0.0.1:8000/api/testimonios',
   apiDeleteFileTestimonio: 'http://127.0.0.1:8000/api/testimonios',
+  /* blog */
+  postsUrl: 'http://127.0.0.1:8000/api/posts',
+  usersUrl: 'http://127.0.0.1:8000/api/users',
+  categoriesUrl: 'http://127.0.0.1:8000/api/categories',
+  commentsUrl: 'http://127.0.0.1:8000/api/comments',
+  tagsUrl: 'http://127.0.0.1:8000/api/tags',
 };
