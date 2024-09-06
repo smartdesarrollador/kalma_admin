@@ -6,6 +6,8 @@ export interface Post {
   contenido?: string;
   id_autor?: number;
   estado?: 'publicado' | 'borrador';
+  imagen?: string;
+  ruta_imagen?: string;
   fecha_publicacion?: Date | null;
   created_at?: Date;
   updated_at?: Date;

@@ -25,10 +25,8 @@ export class PostService {
       .pipe(map((response) => response.data));
   }
 
-  createPost(post: Post): Observable<Post> {
-    return this.http
-      .post<{ data: Post }>(this.postsUrl, post)
-      .pipe(map((response) => response.data));
+  createPost(formData: FormData): Observable<any> {
+    return this.http.post<any>(this.postsUrl, formData);
   }
 
   updatePost(id: number, post: Post): Observable<Post> {
