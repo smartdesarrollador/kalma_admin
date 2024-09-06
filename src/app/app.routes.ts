@@ -50,6 +50,7 @@ import { CreateTagComponent } from './pages/admin/blog/tag/create-tag/create-tag
 import { CreateCommentComponent } from './pages/admin/blog/comments/create-comment/create-comment.component';
 import { EditCategoryComponent } from './pages/admin/blog/categories/edit-category/edit-category.component';
 import { EditTagComponent } from './pages/admin/blog/tag/edit-tag/edit-tag.component';
+import { EditPostComponent } from './pages/admin/blog/post/edit-post/edit-post.component';
 
 export const routes: Routes = [
   {
@@ -188,6 +189,10 @@ export const routes: Routes = [
       {
         path: 'blog/posts/create',
         component: CreatePostComponent,
+      },
+      {
+        path: 'blog/posts/edit/:id',
+        component: EditPostComponent,
       },
       {
         path: 'blog/users',

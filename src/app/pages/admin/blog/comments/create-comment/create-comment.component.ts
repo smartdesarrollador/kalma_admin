@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   FormGroup,
   FormBuilder,
@@ -6,8 +6,10 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { CommentService } from 'src/app/services/comment.service';
+import { PostService } from 'src/app/services/post.service'; // Importar el servicio de posts
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { Post } from 'src/app/models/post.model'; // Importar el modelo de Post
 
 @Component({
   selector: 'app-create-comment',
@@ -16,16 +18,18 @@ import { CommonModule } from '@angular/common';
   templateUrl: './create-comment.component.html',
   styleUrl: './create-comment.component.css',
 })
-export class CreateCommentComponent {
+export class CreateCommentComponent implements OnInit {
   commentForm: FormGroup;
+  posts: Post[] = []; // Arreglo para los posts
 
   constructor(
     private fb: FormBuilder,
     private commentService: CommentService,
+    private postService: PostService, // Servicio para obtener posts
     private router: Router
   ) {
     this.commentForm = this.fb.group({
-      id_articulo: [1, Validators.required], // Valor por defecto 1
+      id_articulo: [null, Validators.required], // Aquí se seleccionará el post
       nombre_comentarista: [
         '',
         [Validators.required, Validators.maxLength(255)],
@@ -35,6 +39,13 @@ export class CreateCommentComponent {
         new Date().toISOString().substring(0, 10),
         Validators.required,
       ], // Fecha actual como valor por defecto
+    });
+  }
+
+  ngOnInit(): void {
+    // Cargar los posts al inicializar el componente
+    this.postService.getPosts().subscribe((data) => {
+      this.posts = data;
     });
   }
 

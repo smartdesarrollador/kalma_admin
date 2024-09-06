@@ -1,3 +1,5 @@
+import { Category } from './category.model'; // Importa el modelo de categorías
+
 export interface Post {
   id?: number;
   titulo?: string;
@@ -8,4 +10,5 @@ export interface Post {
   created_at?: Date;
   updated_at?: Date;
   comentarios?: Comment[];
+  categorias?: Category[]; // Asegúrate de que categorías sea un arreglo de Category
 }

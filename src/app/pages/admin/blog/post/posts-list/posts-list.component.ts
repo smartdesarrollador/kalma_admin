@@ -24,7 +24,7 @@ export class PostsListComponent implements OnInit {
 
   editPost(id: number | undefined): void {
     if (id !== undefined) {
-      this.router.navigate([`/posts/edit/${id}`]);
+      this.router.navigate([`/admin/blog/posts/edit/${id}`]);
     } else {
       console.error('El ID del post es undefined');
     }
