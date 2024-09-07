@@ -12,11 +12,12 @@ import { CategoryService } from 'src/app/services/category.service';
 import { Router } from '@angular/router';
 import { Category } from 'src/app/models/category.model';
 import Swal from 'sweetalert2';
+import { QuillModule } from 'ngx-quill';
 
 @Component({
   selector: 'app-create-post',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, QuillModule],
   templateUrl: './create-post.component.html',
   styleUrls: ['./create-post.component.css'],
 })
@@ -28,6 +29,32 @@ export class CreatePostComponent implements OnInit {
     { id: 2, nombre: 'Autor' },
   ];
   selectedFile: File | null = null; // Almacenar el archivo seleccionado
+
+  htmlContent: any;
+
+  moduleQuill = {
+    toolbar: [
+      ['bold', 'italic', 'underline', 'strike'], // toggled buttons
+      ['blockquote', 'code-block'],
+
+      [{ header: 1 }, { header: 2 }], // custom button values
+      [{ list: 'ordered' }, { list: 'bullet' }],
+      [{ script: 'sub' }, { script: 'super' }], // superscript/subscript
+      [{ indent: '-1' }, { indent: '+1' }], // outdent/indent
+      [{ direction: 'rtl' }], // text direction
+
+      [{ size: ['small', false, 'large', 'huge'] }], // custom dropdown
+      [{ header: [1, 2, 3, 4, 5, 6, false] }],
+
+      [{ color: [] }, { background: [] }], // dropdown with defaults from theme
+      [{ font: [] }],
+      [{ align: [] }],
+
+      ['clean'], // remove formatting button
+
+      ['link', 'image', 'video'], // link and image, video
+    ],
+  };
 
   constructor(
     private fb: FormBuilder,
@@ -49,6 +76,12 @@ export class CreatePostComponent implements OnInit {
     this.categoryService.getCategories().subscribe((data) => {
       this.categorias = data;
     });
+  }
+
+  onChangeEditor(event: any): void {
+    if (event.html) {
+      this.htmlContent = event.html;
+    }
   }
 
   // Método para manejar el archivo seleccionado
