@@ -8,6 +8,7 @@ import {
 import { ActivatedRoute, Router } from '@angular/router';
 import { TagService } from 'src/app/services/tag.service';
 import { CommonModule } from '@angular/common';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-tag',
@@ -48,12 +49,20 @@ export class EditTagComponent implements OnInit {
       this.tagService.updateTag(this.tagId, this.tagForm.value).subscribe(
         () => {
           console.log('Tag actualizado correctamente.');
-          this.router.navigate(['/tags']); // Navegar a la lista de tags
+          this.router.navigate(['/admin/blog/tags']); // Navegar a la lista de tags
+          this.alerta();
         },
         (error) => {
           console.error('Hubo un error al actualizar el tag:', error);
         }
       );
     }
+  }
+
+  alerta() {
+    Swal.fire({
+      icon: 'success',
+      title: 'Registro editado',
+    });
   }
 }

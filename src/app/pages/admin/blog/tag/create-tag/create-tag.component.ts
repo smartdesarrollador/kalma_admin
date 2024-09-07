@@ -8,6 +8,7 @@ import {
 } from '@angular/forms';
 import { TagService } from 'src/app/services/tag.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-create-tag',
@@ -36,7 +37,8 @@ export class CreateTagComponent {
       this.tagService.createTag(newTag).subscribe(
         () => {
           console.log('El tag se ha creado correctamente.');
-          this.router.navigate(['/tags']);
+          this.router.navigate(['/admin/blog/tags']);
+          this.alerta();
         },
         (error) => {
           console.error('Hubo un error al crear el tag:', error);
@@ -45,5 +47,12 @@ export class CreateTagComponent {
     } else {
       console.error('El formulario no es válido.');
     }
+  }
+
+  alerta() {
+    Swal.fire({
+      icon: 'success',
+      title: 'Registro creado',
+    });
   }
 }

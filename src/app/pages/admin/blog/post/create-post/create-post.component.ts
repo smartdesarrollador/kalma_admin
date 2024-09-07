@@ -11,6 +11,7 @@ import { PostService } from 'src/app/services/post.service';
 import { CategoryService } from 'src/app/services/category.service';
 import { Router } from '@angular/router';
 import { Category } from 'src/app/models/category.model';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-create-post',
@@ -82,7 +83,8 @@ export class CreatePostComponent implements OnInit {
       this.postService.createPost(formData).subscribe(
         () => {
           console.log('El post se ha creado correctamente.');
-          this.router.navigate(['/posts']);
+          this.router.navigate(['/admin/blog/posts']);
+          this.alerta();
         },
         (error) => {
           console.error('Hubo un error al crear el post:', error);
@@ -93,5 +95,12 @@ export class CreatePostComponent implements OnInit {
         'El formulario no es válido o no se ha seleccionado una imagen.'
       );
     }
+  }
+
+  alerta() {
+    Swal.fire({
+      icon: 'success',
+      title: 'Registro creado',
+    });
   }
 }

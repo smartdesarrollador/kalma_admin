@@ -11,6 +11,7 @@ import { PostService } from 'src/app/services/post.service'; // Servicio para ob
 import { CommonModule } from '@angular/common';
 import { Post } from 'src/app/models/post.model'; // Modelo Post
 import { Comment } from 'src/app/models/comment.model'; // Modelo Comment
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-comment',
@@ -73,12 +74,19 @@ export class EditCommentComponent implements OnInit {
         .subscribe(
           () => {
             console.log('Comentario actualizado correctamente.');
-            this.router.navigate(['/comments']);
+            this.router.navigate(['/admin/blog/comments']);
+            this.alerta();
           },
           (error) => {
             console.error('Hubo un error al actualizar el comentario:', error);
           }
         );
     }
+  }
+  alerta() {
+    Swal.fire({
+      icon: 'success',
+      title: 'Registro editado',
+    });
   }
 }

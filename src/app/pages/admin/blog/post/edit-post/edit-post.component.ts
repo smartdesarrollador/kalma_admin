@@ -11,6 +11,7 @@ import { CategoryService } from 'src/app/services/category.service';
 import { CommonModule } from '@angular/common';
 import { Post } from 'src/app/models/post.model';
 import { Category } from 'src/app/models/category.model';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-post',
@@ -27,6 +28,7 @@ export class EditPostComponent implements OnInit {
     { id: 2, nombre: 'Autor' },
   ];
   postId: number;
+  selectedImage: File | null = null; // Variable para manejar la imagen seleccionada
 
   constructor(
     private fb: FormBuilder,
@@ -42,6 +44,7 @@ export class EditPostComponent implements OnInit {
       estado: ['publicado', Validators.required],
       fecha_publicacion: ['', Validators.required],
       categorias: [[], Validators.required],
+      imagen: [null], // Campo para la imagen (aunque sea opcional)
     });
 
     // Obtener el ID del post desde la URL
@@ -67,19 +70,56 @@ export class EditPostComponent implements OnInit {
     });
   }
 
+  // Función para manejar la selección de la imagen
+  onFileSelected(event: any): void {
+    if (event.target.files.length > 0) {
+      this.selectedImage = event.target.files[0];
+    }
+  }
+
   updatePost(): void {
     if (this.postForm.valid) {
-      const updatedPost = this.postForm.value;
+      const formData = new FormData();
 
-      this.postService.updatePost(this.postId, updatedPost).subscribe(
+      // Añadir los campos del formulario al FormData
+      formData.append('id', this.postId.toString()); // ID del post a actualizar
+      formData.append('titulo', this.postForm.get('titulo')!.value);
+      formData.append('contenido', this.postForm.get('contenido')!.value);
+      formData.append('id_autor', this.postForm.get('id_autor')!.value);
+      formData.append('estado', this.postForm.get('estado')!.value);
+      formData.append(
+        'fecha_publicacion',
+        this.postForm.get('fecha_publicacion')!.value
+      );
+
+      // Añadir categorías al FormData
+      this.postForm.get('categorias')!.value.forEach((categoriaId: number) => {
+        formData.append('categorias[]', categoriaId.toString());
+      });
+
+      // Si hay una imagen seleccionada, añadirla al FormData
+      if (this.selectedImage) {
+        formData.append('imagen', this.selectedImage);
+      }
+
+      // Enviar el formulario al servicio
+      this.postService.updatePostWithPost(formData).subscribe(
         () => {
           console.log('Post actualizado correctamente.');
-          this.router.navigate(['/posts']);
+          this.router.navigate(['/admin/blog/posts']);
+          this.alerta();
         },
         (error) => {
           console.error('Hubo un error al actualizar el post:', error);
         }
       );
     }
+  }
+
+  alerta() {
+    Swal.fire({
+      icon: 'success',
+      title: 'Registro editado',
+    });
   }
 }

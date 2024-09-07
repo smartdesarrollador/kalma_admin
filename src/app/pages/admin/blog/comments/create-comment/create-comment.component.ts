@@ -10,6 +10,7 @@ import { PostService } from 'src/app/services/post.service'; // Importar el serv
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Post } from 'src/app/models/post.model'; // Importar el modelo de Post
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-create-comment',
@@ -56,7 +57,8 @@ export class CreateCommentComponent implements OnInit {
       this.commentService.createComment(newComment).subscribe(
         () => {
           console.log('El comentario se ha creado correctamente.');
-          this.router.navigate(['/comments']);
+          this.router.navigate(['/admin/blog/comments']);
+          this.alerta();
         },
         (error) => {
           console.error('Hubo un error al crear el comentario:', error);
@@ -65,5 +67,11 @@ export class CreateCommentComponent implements OnInit {
     } else {
       console.error('El formulario no es válido.');
     }
+  }
+  alerta() {
+    Swal.fire({
+      icon: 'success',
+      title: 'Registro creado',
+    });
   }
 }

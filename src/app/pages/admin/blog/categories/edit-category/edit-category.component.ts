@@ -8,6 +8,7 @@ import {
 import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/category.service';
 import { CommonModule } from '@angular/common';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-category',
@@ -52,12 +53,20 @@ export class EditCategoryComponent implements OnInit {
         .subscribe(
           () => {
             console.log('Categoría actualizada correctamente.');
-            this.router.navigate(['/categories']); // Navegar a la lista de categorías
+            this.router.navigate(['/admin/blog/categories']); // Navegar a la lista de categorías
+            this.alerta();
           },
           (error) => {
             console.error('Hubo un error al actualizar la categoría:', error);
           }
         );
     }
+  }
+
+  alerta() {
+    Swal.fire({
+      icon: 'success',
+      title: 'Registro editado',
+    });
   }
 }

@@ -29,6 +29,10 @@ export class PostService {
     return this.http.post<any>(this.postsUrl, formData);
   }
 
+  updatePostWithPost(formData: FormData): Observable<any> {
+    return this.http.post<any>(`${this.postsUrl}/update`, formData); // La URL del nuevo endpoint que has creado en la API
+  }
+
   updatePost(id: number, post: Post): Observable<Post> {
     return this.http
       .put<{ data: Post }>(`${this.postsUrl}/${id}`, post)

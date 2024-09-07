@@ -8,6 +8,7 @@ import {
 } from '@angular/forms';
 import { CategoryService } from 'src/app/services/category.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-create-category',
@@ -40,12 +41,20 @@ export class CreateCategoryComponent {
       this.categoryService.createCategory(newCategory).subscribe(
         () => {
           console.log('La categoría se ha creado correctamente.');
-          this.router.navigate(['/categories']);
+          this.router.navigate(['/admin/blog/categories']);
+          this.alerta();
         },
         (error) => {
           console.error('Hubo un error al crear la categoría:', error);
         }
       );
     }
+  }
+
+  alerta() {
+    Swal.fire({
+      icon: 'success',
+      title: 'Registro creado',
+    });
   }
 }
