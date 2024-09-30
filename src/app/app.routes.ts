@@ -52,6 +52,12 @@ import { EditCategoryComponent } from './pages/admin/blog/categories/edit-catego
 import { EditTagComponent } from './pages/admin/blog/tag/edit-tag/edit-tag.component';
 import { EditPostComponent } from './pages/admin/blog/post/edit-post/edit-post.component';
 import { EditCommentComponent } from './pages/admin/blog/comments/edit-comment/edit-comment.component';
+import { ListCategoria1Component } from './pages/admin/componente1/categoria1/list-categoria1/list-categoria1.component';
+import { CreateCategoria1Component } from './pages/admin/componente1/categoria1/create-categoria1/create-categoria1.component';
+import { EditCategoria1Component } from './pages/admin/componente1/categoria1/edit-categoria1/edit-categoria1.component';
+import { ListTabla1Component } from './pages/admin/componente1/tabla1/list-tabla1/list-tabla1.component';
+import { CreateTabla1Component } from './pages/admin/componente1/tabla1/create-tabla1/create-tabla1.component';
+import { EditTabla1Component } from './pages/admin/componente1/tabla1/edit-tabla1/edit-tabla1.component';
 
 export const routes: Routes = [
   {
@@ -235,6 +241,12 @@ export const routes: Routes = [
         path: 'blog/categories/edit/:id',
         component: EditCategoryComponent,
       },
+      { path: 'categoria/equipo', component: ListCategoria1Component },
+      { path: 'categoria/equipo/create', component: CreateCategoria1Component },
+      { path: 'categoria/equipo/edit/:id', component: EditCategoria1Component },
+      { path: 'equipo', component: ListTabla1Component },
+      { path: 'equipo/create', component: CreateTabla1Component },
+      { path: 'equipo/edit/:id', component: EditTabla1Component },
     ],
   },
   {

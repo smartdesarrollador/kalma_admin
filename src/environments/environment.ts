@@ -94,4 +94,11 @@ export const environment = {
   categoriesUrl: 'https://apikalmaperu.enfocussoluciones.pe/api/categories',
   commentsUrl: 'https://apikalmaperu.enfocussoluciones.pe/api/comments',
   tagsUrl: 'https://apikalmaperu.enfocussoluciones.pe/api/tags',
+  /* componente1 */
+  dominio: 'https://apikalmaperu.enfocussoluciones.pe',
+  apiBaseUrl: 'https://apikalmaperu.enfocussoluciones.pe/api', // URL base para la API en producción
+  endpoints: {
+    categoria1: '/categoria1',
+    tabla1: '/tabla1',
+  },
 };

@@ -40,4 +40,11 @@ export const environment = {
   categoriesUrl: 'http://127.0.0.1:8000/api/categories',
   commentsUrl: 'http://127.0.0.1:8000/api/comments',
   tagsUrl: 'http://127.0.0.1:8000/api/tags',
+  /* componente1 */
+  dominio: 'http://127.0.0.1:8000',
+  apiBaseUrl: 'http://127.0.0.1:8000/api', // URL base para la API de Laravel
+  endpoints: {
+    categoria1: '/categoria1',
+    tabla1: '/tabla1',
+  },
 };
