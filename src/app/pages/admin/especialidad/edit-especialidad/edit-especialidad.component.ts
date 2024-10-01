@@ -240,7 +240,7 @@ export class EditEspecialidadComponent {
       this.data = res;
       console.log(this.data);
       this.alerta();
-      this.router.navigate(['/admin/especialidades']);
+      this.router.navigate(['/admin/servicio2']);
     });
   }
 

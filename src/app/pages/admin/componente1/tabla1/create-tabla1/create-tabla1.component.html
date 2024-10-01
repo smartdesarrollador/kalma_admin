@@ -83,6 +83,20 @@
         <span class="ml-2">Activo</span>
       </label>
     </div>
+    <div>
+      <label for="categoria1_id" class="block text-sm font-medium"
+        >Categoría</label
+      >
+      <select
+        id="categoria1_id"
+        formControlName="categoria1_id"
+        class="mt-1 p-2 w-full border border-gray-300 rounded"
+      >
+        <option *ngFor="let categoria of categorias" [value]="categoria.id">
+          {{ categoria.varchar1 }}
+        </option>
+      </select>
+    </div>
 
     <div>
       <label for="varchar7" class="block text-sm font-medium">Imagen</label>

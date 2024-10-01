@@ -8,6 +8,8 @@ import {
 } from '@angular/forms';
 import { Tabla1Service } from '../tabla1.service';
 import { Tabla1 } from '../tabla1';
+import { Categoria1Service } from '../../categoria1/categoria1.service';
+import { Categoria1 } from '../../categoria1/categoria1';
 import { RouterLink, Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import Swal from 'sweetalert2';
@@ -28,12 +30,13 @@ import { QuillModule } from 'ngx-quill';
 })
 export class CreateTabla1Component implements OnInit {
   tablaForm: FormGroup;
-
+  categorias: Categoria1[] = [];
   htmlContent: any;
 
   constructor(
     private fb: FormBuilder,
     private tabla1Service: Tabla1Service,
+    private categoria1Service: Categoria1Service,
     private router: Router
   ) {
     this.tablaForm = this.fb.group({
@@ -43,6 +46,7 @@ export class CreateTabla1Component implements OnInit {
       text1: [''],
       boolean1: [false, [Validators.required]],
       varchar7: [null, [Validators.required]],
+      categoria1_id: [null, [Validators.required]],
     });
   }
 
@@ -70,12 +74,21 @@ export class CreateTabla1Component implements OnInit {
     ],
   };
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getCategorias();
+  }
 
   onChangeEditor(event: any): void {
     if (event.html) {
       this.htmlContent = event.html;
     }
+  }
+
+  getCategorias(): void {
+    this.categoria1Service.getCategorias().subscribe({
+      next: (data) => (this.categorias = data),
+      error: (err) => console.error('Error fetching categories', err),
+    });
   }
 
   onFileChange(event: any): void {
@@ -106,6 +119,10 @@ export class CreateTabla1Component implements OnInit {
       formData.append(
         'boolean1',
         this.tablaForm.get('boolean1')?.value ? '1' : '0'
+      );
+      formData.append(
+        'categoria1_id',
+        this.tablaForm.get('categoria1_id')?.value
       );
       if (this.tablaForm.get('varchar7')?.value) {
         formData.append('varchar7', this.tablaForm.get('varchar7')?.value);

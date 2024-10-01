@@ -119,7 +119,7 @@ export class EspecialidadComponent {
   onEdit(category: Producto) {
     console.log(category);
     this.dataService.selectCategory = Object.assign({}, category);
-    this.router.navigate(['/admin/especialidades/edit'], {
+    this.router.navigate(['/admin/servicio2/edit'], {
       queryParams: { categoryId: category.id_producto },
     });
   }

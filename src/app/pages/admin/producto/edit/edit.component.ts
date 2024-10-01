@@ -241,7 +241,7 @@ export class EditComponent {
       this.data = res;
       console.log(this.data);
       this.alerta();
-      this.router.navigate(['/admin/cursos']);
+      this.router.navigate(['/admin/servicio1']);
     });
   }
 

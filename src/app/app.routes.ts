@@ -140,32 +140,32 @@ export const routes: Routes = [
         component: UpdateFileCarouselComponent,
       },
       {
-        path: 'cursos',
+        path: 'servicio1',
         canActivate: [AuthGuard],
         component: ProductoComponent,
       },
       {
-        path: 'cursos/create',
+        path: 'servicio1/create',
         canActivate: [AuthGuard],
         component: CreateComponent,
       },
       {
-        path: 'cursos/edit',
+        path: 'servicio1/edit',
         canActivate: [AuthGuard],
         component: EditComponent,
       },
       {
-        path: 'especialidades',
+        path: 'servicio2',
         canActivate: [AuthGuard],
         component: EspecialidadComponent,
       },
       {
-        path: 'especialidades/create',
+        path: 'servicio2/create',
         canActivate: [AuthGuard],
         component: CreateEspecialidadComponent,
       },
       {
-        path: 'especialidades/edit',
+        path: 'servicio2/edit',
         canActivate: [AuthGuard],
         component: EditEspecialidadComponent,
       },
