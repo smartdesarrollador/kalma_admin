@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PostService } from 'src/app/services/post.service';
 import { Post } from 'src/app/models/post.model';
 import { Router, RouterLink } from '@angular/router'; // Importar Router para la navegación
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-posts-list',
@@ -12,6 +13,7 @@ import { Router, RouterLink } from '@angular/router'; // Importar Router para la
   styleUrl: './posts-list.component.css',
 })
 export class PostsListComponent implements OnInit {
+  dominio = environment.dominio;
   posts: Post[] = [];
 
   constructor(private postService: PostService, private router: Router) {}
