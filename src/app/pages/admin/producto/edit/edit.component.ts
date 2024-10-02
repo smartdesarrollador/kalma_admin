@@ -125,20 +125,20 @@ export class EditComponent {
   createForm() {
     this.form = this.formBuilder.group({
       nombre: [this.dataService.selectCategory.nombre, Validators.required],
-      resumen: [this.dataService.selectCategory.resumen, Validators.required],
+      /* resumen: [this.dataService.selectCategory.resumen, Validators.required], */
       descripcion: [
         this.dataService.selectCategory.descripcion,
         Validators.required,
       ],
-      duracion: [this.dataService.selectCategory.duracion, Validators.required],
+      /* duracion: [this.dataService.selectCategory.duracion, Validators.required], */
       image: [null],
-      pdf: [null],
+      /* pdf: [null], */
       /* maestro: [this.dataService.selectCategory.maestro, Validators.required], */
-      observacion: [
+      /* observacion: [
         this.dataService.selectCategory.observacion,
         Validators.required,
-      ],
-      precio: [this.dataService.selectCategory.precio, Validators.required],
+      ], */
+      /*  precio: [this.dataService.selectCategory.precio, Validators.required], */
       destacado: [
         this.dataService.selectCategory.destacado == 'true' ? true : false,
       ],

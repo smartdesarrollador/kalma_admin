@@ -124,20 +124,20 @@ export class EditEspecialidadComponent {
   createForm() {
     this.form = this.formBuilder.group({
       nombre: [this.dataService.selectCategory.nombre, Validators.required],
-      resumen: [this.dataService.selectCategory.resumen, Validators.required],
+      /* resumen: [this.dataService.selectCategory.resumen, Validators.required], */
       descripcion: [
         this.dataService.selectCategory.descripcion,
         Validators.required,
       ],
-      duracion: [this.dataService.selectCategory.duracion, Validators.required],
+      /* duracion: [this.dataService.selectCategory.duracion, Validators.required], */
       image: [null],
-      pdf: [null],
+      /* pdf: [null], */
       /* maestro: [this.dataService.selectCategory.maestro, Validators.required], */
-      observacion: [
+      /* observacion: [
         this.dataService.selectCategory.observacion,
         Validators.required,
-      ],
-      precio: [this.dataService.selectCategory.precio, Validators.required],
+      ], */
+      /* precio: [this.dataService.selectCategory.precio, Validators.required], */
       destacado: [
         this.dataService.selectCategory.destacado == 'true' ? true : false,
       ],
@@ -219,20 +219,20 @@ export class EditEspecialidadComponent {
     const formData = new FormData();
     formData.append('id_producto', this.valor_id_producto);
     formData.append('nombre', this.form.value.nombre);
-    formData.append('resumen', this.form.value.resumen);
+    /* formData.append('resumen', this.form.value.resumen); */
     formData.append('descripcion', this.form.value.descripcion);
-    formData.append('duracion', this.form.value.duracion);
+    /* formData.append('duracion', this.form.value.duracion); */
 
     if (this.files_date) {
       formData.append('imagen', this.files_date, this.files_date.name);
     }
 
-    if (this.files_date_pdf) {
+    /* if (this.files_date_pdf) {
       formData.append('pdf', this.files_date_pdf, this.files_date_pdf.name);
-    }
+    } */
     /* formData.append('maestro', this.form.value.maestro); */
-    formData.append('observacion', this.form.value.observacion);
-    formData.append('precio', this.form.value.precio);
+    /* formData.append('observacion', this.form.value.observacion); */
+    /* formData.append('precio', this.form.value.precio); */
     formData.append('destacado', this.form.value.destacado);
     formData.append('categoria_producto_id', this.categoriaProductoId);
 
