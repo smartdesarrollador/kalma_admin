@@ -93,7 +93,7 @@ export class CreateComponent {
   createForm() {
     this.form = this.formBuilder.group({
       nombre: [null, Validators.required],
-      /* resumen: [null, Validators.required], */
+      resumen: [null, Validators.required],
       descripcion: [null, Validators.required],
       /* duracion: [null, Validators.required], */
       image: [null, Validators.required],
@@ -180,7 +180,7 @@ export class CreateComponent {
 
     const formData = new FormData();
     formData.append('nombre', this.form.value.nombre);
-    /* formData.append('resumen', this.form.value.resumen); */
+    formData.append('resumen', this.form.value.resumen);
     formData.append('descripcion', this.form.value.descripcion);
     /* formData.append('duracion', this.form.value.duracion); */
     formData.append('imagen', this.files_date, this.files_date.name);

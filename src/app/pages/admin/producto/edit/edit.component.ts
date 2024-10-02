@@ -125,7 +125,7 @@ export class EditComponent {
   createForm() {
     this.form = this.formBuilder.group({
       nombre: [this.dataService.selectCategory.nombre, Validators.required],
-      /* resumen: [this.dataService.selectCategory.resumen, Validators.required], */
+      resumen: [this.dataService.selectCategory.resumen, Validators.required],
       descripcion: [
         this.dataService.selectCategory.descripcion,
         Validators.required,
