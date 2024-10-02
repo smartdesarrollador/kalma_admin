@@ -1,13 +1,13 @@
 <div class="container mx-auto my-8">
-  <h2 class="text-2xl font-bold mb-4">Listado de Registros de Tabla1</h2>
+  <h2 class="text-2xl font-bold mb-4">Listado de Registros</h2>
   <div class="overflow-x-auto">
     <table class="min-w-full bg-white border border-gray-300">
       <thead>
         <tr>
           <th class="py-2 px-4 border-b border-gray-300 text-left">ID</th>
           <th class="py-2 px-4 border-b border-gray-300 text-left">NOMBRE</th>
-          <th class="py-2 px-4 border-b border-gray-300 text-left">CORREO</th>
-          <th class="py-2 px-4 border-b border-gray-300 text-left">TELEFONO</th>
+          <th class="py-2 px-4 border-b border-gray-300 text-left">CARGO</th>
+          <!-- <th class="py-2 px-4 border-b border-gray-300 text-left">TELEFONO</th> -->
           <!-- <th class="py-2 px-4 border-b border-gray-300 text-left">
             DESCRIPCIÓN
           </th> -->
@@ -20,7 +20,8 @@
       <tbody>
         <tr
           *ngFor="
-            let tabla of tablas | paginate : { itemsPerPage: 5, currentPage: p }
+            let tabla of tablas
+              | paginate : { itemsPerPage: 10, currentPage: p }
           "
           class="hover:bg-gray-100"
         >
@@ -31,9 +32,9 @@
           <td class="py-2 px-4 border-b border-gray-300">
             {{ tabla.varchar2 }}
           </td>
-          <td class="py-2 px-4 border-b border-gray-300">
+          <!-- <td class="py-2 px-4 border-b border-gray-300">
             {{ tabla.varchar3 }}
-          </td>
+          </td> -->
           <!-- <td class="py-2 px-4 border-b border-gray-300">{{ tabla.text1 }}</td> -->
           <td class="py-2 px-4 border-b border-gray-300">
             <img

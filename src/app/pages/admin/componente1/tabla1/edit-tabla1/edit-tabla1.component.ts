@@ -73,7 +73,7 @@ export class EditTabla1Component implements OnInit {
     this.tablaForm = this.fb.group({
       varchar1: ['', [Validators.required, Validators.maxLength(250)]],
       varchar2: ['', [Validators.required, Validators.maxLength(250)]],
-      varchar3: ['', [Validators.required, Validators.maxLength(250)]],
+      /* varchar3: ['', [Validators.required, Validators.maxLength(250)]], */
       text1: [''],
       boolean1: [false, [Validators.required]],
       varchar7: [null],
@@ -139,7 +139,7 @@ export class EditTabla1Component implements OnInit {
       const formData = new FormData();
       formData.append('varchar1', this.tablaForm.get('varchar1')?.value);
       formData.append('varchar2', this.tablaForm.get('varchar2')?.value);
-      formData.append('varchar3', this.tablaForm.get('varchar3')?.value);
+      /* formData.append('varchar3', this.tablaForm.get('varchar3')?.value); */
       formData.append('text1', this.tablaForm.get('text1')?.value);
       formData.append(
         'boolean1',
