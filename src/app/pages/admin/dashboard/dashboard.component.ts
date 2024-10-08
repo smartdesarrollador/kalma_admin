@@ -14,6 +14,7 @@ import {
   ApexNonAxisChartSeries,
   ApexResponsive,
 } from 'ng-apexcharts';
+import { RouterLink } from '@angular/router';
 
 export type ChartOptions = {
   series: ApexAxisChartSeries;
@@ -38,6 +39,7 @@ export type ChartOptionsPie = {
     PermissionDirective,
     Toast1Component,
     Table1Component,
+    RouterLink,
   ],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
